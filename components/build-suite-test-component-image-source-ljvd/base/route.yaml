@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: build-suite-test-component-image-source-ljvd
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: build-suite-test-component-image-source-ljvd
+    app.kubernetes.io/part-of: test-app-nkvd
+  name: build-suite-test-componensyoz
+  namespace: build-e2e-rgry-tenant
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: build-suite-test-component-image-source-ljvd
+    weight: 100
+status: {}
